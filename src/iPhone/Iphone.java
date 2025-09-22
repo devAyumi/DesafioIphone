@@ -4,10 +4,7 @@ import iPhone.funcoes.AparelhoTelefonico;
 import iPhone.funcoes.NavegadorInternet;
 import iPhone.funcoes.ReprodutorMusical;
 
-import java.util.Scanner;
-
 public class Iphone implements AparelhoTelefonico, NavegadorInternet, ReprodutorMusical {
-    Scanner scan = new Scanner(System.in);
     public void tocar() {
         System.out.println("TOCANDO MÚSICA");
     }

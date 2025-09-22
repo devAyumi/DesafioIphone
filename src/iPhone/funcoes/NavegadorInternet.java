@@ -1,7 +1,7 @@
 package iPhone.funcoes;
 
 public interface NavegadorInternet {
-    public void exibirPagina(String url);
-    public void adicionarNovaAba();
-    public void atualizarPagina();
+    void exibirPagina(String url);
+    void adicionarNovaAba();
+    void atualizarPagina();
 }
