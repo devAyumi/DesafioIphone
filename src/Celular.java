@@ -16,24 +16,37 @@ public class Celular {
 
         System.out.println("QUAL SISTEMA QUER ACESSAR?");
         String sistemaAcessado = scan.next();
+        scan.nextLine();
 
         switch (sistemaAcessado){
             case "REPRODUTOR":{
-                musica.selecionarMusica("Baby - Justin Bieber");
+                System.out.println("Selecione uma música: ");
+                musica.selecionarMusica(scan.nextLine());
                 musica.tocar();
-                musica.pausar();
+
+                System.out.println("Deseja pausar? ");
+                String pausar = scan.next();
+                if (pausar.equals("SIM")) {
+                    musica.pausar();
+                }
                 break;
             }
             case "NAVEGADOR":{
+                System.out.println("Inserir URL: ");
+                navegador.exibirPagina(scan.next());
                 navegador.adicionarNovaAba();
-                navegador.exibirPagina("wikipedia.com");
-                navegador.atualizarPagina();
+
+                System.out.println("Deseja atualizar a página?");
+                String atualizar = scan.next();
+                if (atualizar.equals("SIM"))
+                    navegador.atualizarPagina();
                 break;
             }
             case "TELEFONE":{
-                telefone.ligar("(41)99999-9999");
-                telefone.atender();
+                System.out.println("Informe o número de telefone que deseja ligar: ");
+                telefone.ligar(scan.nextLine());
                 telefone.iniciarCorreioVoz();
+                telefone.atender();
                 break;
             }
         }
